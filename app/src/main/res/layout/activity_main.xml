@@ -8,5 +8,61 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <!-- Sensor de Gravedad -->
+        <TextView
+            android:id="@+id/tv_gravity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sensor de Gravedad"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tv_x"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="X: 0.0"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_y"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Y: 0.0"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_z"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Z: 0.0"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Coordenadas GPS -->
+        <TextView
+            android:id="@+id/tv_latitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Latitud: N/A"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tv_longitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Longitud: N/A"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btn_get_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Obtener ubicación" />
     </LinearLayout>
 </ScrollView>
