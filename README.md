@@ -1,39 +1,70 @@
-# 📱 **Gravimetría App** 🌍
+# README del Proyecto: Aplicación de Gravedad y Ubicación
 
-Una aplicación para mostrar datos de sensores de gravedad y obtener la ubicación actual del usuario mediante GPS. ⚖️📡
+## Descripción del Proyecto
 
-## 🚀 Características
+Este proyecto tiene como objetivo crear una aplicación Android que utilice dos funcionalidades principales:
 
-- **Sensor de gravedad**: Muestra las lecturas de los ejes X, Y y Z del sensor de gravedad del dispositivo. 📊
-- **GPS**: Obtiene y muestra la latitud y longitud actuales del usuario. 📍
+1. **Sensor de Gravedad**: Captura los valores del sensor de gravedad (ejes X, Y, Z) para mostrar la aceleración en el dispositivo.
+2. **Ubicación GPS**: Obtiene y muestra las coordenadas GPS del dispositivo (latitud y longitud) cuando el usuario hace clic en un botón para obtener la ubicación.
 
-## 🛠️ Tecnologías utilizadas
+## Estructura del Código
 
-- **Kotlin**: Lenguaje principal de desarrollo. 💻
-- **Android SDK**: Para manejar sensores y ubicación. 📱
-- **Google Location Services**: Integración para obtener la ubicación del dispositivo. 🗺️
+El código consta de dos partes principales:
 
-## 📌 Tabla de Contribuciones
+1. **MainActivity.kt**: Contiene la lógica para manejar los sensores y el GPS.
+2. **activity_main.xml**: Es el archivo de la interfaz de usuario donde se encuentran los TextViews para mostrar los resultados y un botón para obtener la ubicación.
 
-| Integrante        | Descripción de lo que hizo                                                                                                                                   |
-|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Nombre 1**      | Descripción de lo que hizo, ejemplo: Implementación del sensor de gravedad.                                                                                 |
-| **Nombre 2**      | Descripción de lo que hizo, ejemplo: Desarrollo de la funcionalidad de ubicación.                                                                            |
-| **Nombre 3**      | Descripción de lo que hizo, ejemplo: Configuración del acceso a permisos de ubicación.                                                                     |
-| **Nombre 4**      | Descripción de lo que hizo, ejemplo: Ajustes de la interfaz de usuario (UI) para mostrar los resultados.                                                   |
-| **Nombre 5**      | Descripción de lo que hizo, ejemplo: Configuración del acceso a permisos de ubicación.                                                                     |
-| **Nombre 6**      | Descripción de lo que hizo, ejemplo: Ajustes de la interfaz de usuario (UI) para mostrar los resultados.                                                   |
-| **Nombre 7**      | Descripción de lo que hizo, ejemplo: Ajustes de la interfaz de usuario (UI) para mostrar los resultados.                                                   |
+## Funcionalidad
 
-## 📚 Descripción del código
+### Sensor de Gravedad
+- La aplicación obtiene datos del sensor de gravedad del dispositivo y muestra los valores de aceleración en los ejes X, Y, Z en la interfaz de usuario.
 
-### 📊 Sensor de gravedad
-
-El sensor de gravedad mide la aceleración de la gravedad en los ejes X, Y y Z. Estos valores se muestran en la interfaz para que el usuario los vea en tiempo real.
-
-### 📍 Obtención de ubicación
-
-El GPS obtiene la ubicación actual del usuario. Al presionar el botón correspondiente, se muestra la latitud y longitud actuales en la pantalla. En caso de que la ubicación no esté disponible, se muestra un mensaje indicando que no se pudo obtener la ubicación.
+### GPS
+- La aplicación solicita permisos al usuario para acceder a su ubicación y muestra la latitud y longitud obtenidas.
 
 ---
-🎉 ¡Gracias por tu colaboración! 🎉
+
+## Participantes y Funciones
+
+El proyecto fue realizado por 7 participantes, cada uno encargado de una parte específica del desarrollo. A continuación se detalla lo que hizo cada participante, con su respectiva sección de código:
+
+### 1. **Shamyr Quishpe** - Estructura base del proyecto
+
+- Configura la estructura inicial del proyecto.
+- Crea la clase principal MainActivity y el diseño base en activity_main.xml.
+  
+### 2. **Mónica Jaña** – Diseño de la interfaz
+
+- Implementa el diseño de la interfaz gráfica en activity_main.xml.
+- Organiza las vistas (TextView, Button, etc.) según las especificaciones del proyecto.
+
+### 3. **Scarllet Luna** – Configuración del sensor de gravedad
+
+- Configura el sensor de gravedad en la aplicación.
+- Implementa la lógica para capturar y mostrar los valores de X, Y y Z en la interfaz.
+
+### 4. **Cristian Paredes** – Configuración de GPS y permisos
+
+- Configura el cliente de ubicación (FusedLocationProviderClient).
+- Implementa la solicitud de permisos de ubicación para el GPS.
+
+### 5. **David Vela** – Manejo de la obtención de ubicación
+
+- Implementa la lógica para obtener la ubicación actual del dispositivo.
+- Actualiza la interfaz con los datos de latitud y longitud obtenidos.
+  
+### 6. **Freddy Villavicencio** – Manejo de errores y permisos
+
+- Agrega validaciones y manejo de errores en la obtención de permisos y ubicación.
+- Muestra mensajes claros en la interfaz para indicar problemas al usuario.
+
+### 7. **Miguel Carvajal** - Mejorar el diseño de la aplicacion 
+
+- Agregar mas funcionalidades
+- Creacion del readme
+
+
+### Conclusión
+Este proyecto se desarrolló en equipo con una clara división de tareas. Cada miembro contribuyó con sus habilidades en diversas áreas como el manejo de sensores, permisos, diseño de la UI, y gestión de errores.
+La colaboración permitió crear una aplicación funcional y eficiente para la captura de datos de gravedad y la obtención de la ubicación GPS del dispositivo.
+
