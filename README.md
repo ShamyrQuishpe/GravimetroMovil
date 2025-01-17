@@ -1,4 +1,4 @@
-# README del Proyecto: Aplicación de Gravedad y Ubicación
+# Aplicación de Gravimetro y Ubicación
 
 ## Descripción del Proyecto
 
