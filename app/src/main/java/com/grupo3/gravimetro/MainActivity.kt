@@ -24,13 +24,12 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     private lateinit var tvY: TextView
     private lateinit var tvZ: TextView
 
-     // Variables para el GPS
+    // Variables para el GPS
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var tvLatitude: TextView
     private lateinit var tvLongitude: TextView
     private lateinit var btnGetLocation: Button
     private val LOCATION_PERMISSION_REQUEST_CODE = 1
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,9 +54,23 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         btnGetLocation.setOnClickListener {
             checkLocationPermission()
         }
-
     }
-    
+
+    private fun getLocation() {
+        fusedLocationClient.lastLocation.addOnSuccessListener { location: Location? ->
+            if (location != null) {
+                tvLatitude.text = "Latitud: ${location.latitude}"
+                tvLongitude.text = "Longitud: ${location.longitude}"
+            } else {
+                tvLatitude.text = "Latitud: No disponible"
+                tvLongitude.text = "Longitud: No disponible"
+            }
+        }.addOnFailureListener {
+            tvLatitude.text = "Error al obtener ubicación"
+            tvLongitude.text = "Reintente más tarde"
+        }
+    }
+
     // Métodos para el sensor de gravedad
     override fun onResume() {
         super.onResume()
@@ -83,5 +96,4 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {}
-
 }
