@@ -1,4 +1,4 @@
-package com.example.gravimetro
+package com.grupo3.gravimetro
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -58,6 +58,28 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     }
 
     private fun getLocation() {
+        // Verificar el permiso antes de obtener la ubicación
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            // Si no tenemos permisos, los solicitamos
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION
+                ),
+                LOCATION_PERMISSION_REQUEST_CODE
+            )
+            return
+        }
+
+        // Si tenemos los permisos, procedemos a obtener la ubicación
         fusedLocationClient.lastLocation.addOnSuccessListener { location: Location? ->
             if (location != null) {
                 tvLatitude.text = "Latitud: ${location.latitude}"
