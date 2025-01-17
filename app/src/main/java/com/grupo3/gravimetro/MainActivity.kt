@@ -24,6 +24,12 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     private lateinit var tvY: TextView
     private lateinit var tvZ: TextView
 
+     // Variables para el GPS
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private lateinit var tvLatitude: TextView
+    private lateinit var tvLongitude: TextView
+    private lateinit var btnGetLocation: Button
+    private val LOCATION_PERMISSION_REQUEST_CODE = 1
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +46,18 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
             tvX.text = "Sensor de gravedad no disponible"
         }
 
+        // Inicialización del GPS
+        tvLatitude = findViewById(R.id.tv_latitude)
+        tvLongitude = findViewById(R.id.tv_longitude)
+        btnGetLocation = findViewById(R.id.btn_get_location)
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+
+        btnGetLocation.setOnClickListener {
+            checkLocationPermission()
+        }
+
     }
+    
     // Métodos para el sensor de gravedad
     override fun onResume() {
         super.onResume()
