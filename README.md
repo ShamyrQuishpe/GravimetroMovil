@@ -68,3 +68,6 @@ El proyecto fue realizado por 7 participantes, cada uno encargado de una parte e
 Este proyecto se desarrolló en equipo con una clara división de tareas. Cada miembro contribuyó con sus habilidades en diversas áreas como el manejo de sensores, permisos, diseño de la UI, y gestión de errores.
 La colaboración permitió crear una aplicación funcional y eficiente para la captura de datos de gravedad y la obtención de la ubicación GPS del dispositivo.
 
+![WhatsApp Image 2025-01-16 at 11 11 21 PM](https://github.com/user-attachments/assets/08f3c4a5-7159-4da0-84ef-405e818ed072)
+
+
